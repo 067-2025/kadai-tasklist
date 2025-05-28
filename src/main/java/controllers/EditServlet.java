@@ -35,7 +35,7 @@ public class EditServlet extends HttpServlet {
             throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
-        // 該当のIDのメッセージ1件のみをデータベースから取得
+        // 該当のIDのタスク1件のみをデータベースから取得
         Content c = em.find(Content.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
