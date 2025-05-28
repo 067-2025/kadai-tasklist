@@ -14,10 +14,8 @@ import jakarta.persistence.Table;
 @Entity
 
 @NamedQueries({
-    @NamedQuery(
-        name = "getAllContents",
-        query = "SELECT m FROM Content AS m ORDER BY m.id DESC"
-    )
+        @NamedQuery(name = "getAllContents", query = "SELECT m FROM Content AS m ORDER BY m.id DESC"),
+        @NamedQuery(name = "getContentsCount", query = "SELECT COUNT(m) FROM Content AS m")
 })
 
 @Table(name = "tasks")
