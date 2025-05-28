@@ -6,7 +6,7 @@ xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml
 
 
 <persistence-unit name="tasklist" transaction-type="RESOURCE_LOCAL">
-<class>tasks.Task</class>
+<class>models.Content</class>
 <properties>
   <!-- JPA 3.1 では `javax.persistence` ではなく `jakarta.persistence` に変更 -->
   <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
