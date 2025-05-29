@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import models.Content;
-import models.validators.MessageValidator;
+import models.validators.ContentValidator;
 import utils.DBUtil;
 
 /**
@@ -51,7 +51,7 @@ public class CreateServlet extends HttpServlet {
             c.setUpdated_at(currentTime);
 
             // バリデーションを実行してエラーがあったら新規登録のフォームに戻る
-            List<String> errors = MessageValidator.validate(c);
+            List<String> errors = ContentValidator.validate(c);
             if (errors.size() > 0) {
                 em.close();
 

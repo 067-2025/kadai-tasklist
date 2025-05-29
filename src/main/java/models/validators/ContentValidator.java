@@ -5,7 +5,7 @@ import java.util.List;
 
 import models.Content;
 
-public class MessageValidator {
+public class ContentValidator {
     // バリデーションを実行する
     public static List<String> validate(Content c) {
         List<String> errors = new ArrayList<String>();

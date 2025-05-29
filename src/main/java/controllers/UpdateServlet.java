@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import models.Content;
-import models.validators.MessageValidator;
+import models.validators.ContentValidator;
 import utils.DBUtil;
 
 /**
@@ -53,7 +53,7 @@ public class UpdateServlet extends HttpServlet {
             c.setUpdated_at(currentTime); // 更新日時のみ上書き
 
             // バリデーションを実行してエラーがあったら編集画面のフォームに戻る
-            List<String> errors = MessageValidator.validate(c);
+            List<String> errors = ContentValidator.validate(c);
             if (errors.size() > 0) {
                 em.close();
 
@@ -62,7 +62,7 @@ public class UpdateServlet extends HttpServlet {
                 request.setAttribute("content", c);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/edit.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/contents/edit.jsp");
                 rd.forward(request, response);
             } else {
                 // データベースを更新
